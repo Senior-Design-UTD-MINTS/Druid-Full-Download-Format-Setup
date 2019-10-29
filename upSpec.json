@@ -1,0 +1,80 @@
+{
+    "type": "index_parallel",
+    "spec": {
+        "ioConfig": {
+            "type": "index_parallel",
+            "firehose": {
+                "type": "local",
+                "baseDir": "/home/ben/Documents/Design/Druid/apache-druid-0.16.0-incubating/formatdata",
+                "filter": "formatted.csv"
+            }
+        },
+        "tuningConfig": {
+            "type": "index_parallel"
+        },
+        "dataSchema": {
+            "dataSource": "formatted",
+            "granularitySpec": {
+                "type": "uniform",
+                "segmentGranularity": "DAY",
+                "queryGranularity": "NONE",
+                "rollup": true
+            },
+            "parser": {
+                "type": "string",
+                "parseSpec": {
+                    "format": "csv",
+                    "timestampSpec": {
+                        "column": "dateTime",
+                        "format": "iso"
+                    },
+                    "hasHeaderRow": true,
+                    "dimensionsSpec": {
+                        "dimensions": []
+                    }
+                }
+            },
+            "metricsSpec": [
+                {
+                    "name": "count",
+                    "type": "count"
+                },
+                {
+                    "name": "sum_Bin9",
+                    "type": "longSum",
+                    "fieldName": "Bin9"
+                },
+                {
+                    "name": "sum_Bin10",
+                    "type": "longSum",
+                    "fieldName": "Bin10"
+                },
+                {
+                    "name": "sum_Bin11",
+                    "type": "longSum",
+                    "fieldName": "Bin11"
+                },
+                {
+                    "name": "sum_Bin12",
+                    "type": "longSum",
+                    "fieldName": "Bin12"
+                },
+                {
+                    "name": "sum_Bin13",
+                    "type": "longSum",
+                    "fieldName": "Bin13"
+                },
+                {
+                    "name": "sum_Bin14",
+                    "type": "longSum",
+                    "fieldName": "Bin14"
+                },
+                {
+                    "name": "sum_Bin15",
+                    "type": "longSum",
+                    "fieldName": "Bin15"
+                }
+            ]
+        }
+    }
+}
