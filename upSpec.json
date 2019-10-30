@@ -13,7 +13,7 @@
             "type": "index_parallel"
         },
         "dataSchema": {
-            "dataSource": "formatted",
+            "dataSource": "INITIAL_DATA",
             "granularitySpec": {
                 "type": "uniform",
                 "segmentGranularity": "DAY",
