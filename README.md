@@ -11,11 +11,11 @@ To run this code:
   
   4) Place files 'formatCSV.py' and 'upSpec.json' in the 'formatdata' directory.
   
-  5) Run Druid (in Druid root/incubating directory run './bin/start-micro/quickstart'). Default port is http://localhost:8888 , go to that URl to see Druid overlord interface. MUST BE RUNNING TO WORK. 
+  5) Run Druid (in Druid root/incubating directory run './bin/start-micro-quickstart'). Default port is http://localhost:8888 , go to that URl to see Druid overlord interface. MUST BE RUNNING TO WORK. 
   
   6) Go into 'upSpec.json' and CHANGE 'baseDir' field in schema to the filepath for the formatdata directory you've created. (I will automate this later). Currently it is hardcoded to my (Ben's) machine. 
   
-  7) run fomratCSV.py in 'formatdata' directory. (cd to 'formatdata' and then run 'python3 formatCSV.py' on command line)
+  7) run formatCSV.py in 'formatdata' directory. (cd to 'formatdata' and then run 'python3 formatCSV.py' on command line)
   
   8) You will be prompted if you want to upload to Druid. MAKE SURE DRUID IS RUNNING BEFORE SAYING YES. Any input besides 'y' will not execute. 
   
@@ -24,4 +24,4 @@ To run this code:
     
   10) If you want to redo this process simply delete the 'formatted.csv' file in 'formatdata' and DELETE DATASOURCE FROM LOCAL DRUID INSTANCE (use Druid overlord interface at port 8888). Then simply run 'formatCSV.py' again. 
   
-  Notes: formatcsv.py gets all the latest data up to the point when you run the code, it DOES NOT acquire new data afterwards (that's what ingest.py is for). YOU MUST CHANGE 'upSpec.json' FOR THIS TO WORK (see step 6). If you choose NOT to run the auto-ingestion script, in order to get the latest data at that moment you will have to repeat this process (see step 10). ANY TASK YOU RUN TO DRUID CAN BE VERIFIED AS RUNNING AND WHETHER OR NOT IT WAS SUCCESSFUL IN THE OVERLORD INTERFACE AT PORT 8888 (navigate to 'tasks').
+  Notes: formatCSV.py gets all the latest data up to the point when you run the code, it DOES NOT acquire new data afterwards (that's what ingest.py is for). YOU MUST CHANGE 'upSpec.json' FOR THIS TO WORK (see step 6). If you choose NOT to run the auto-ingestion script, in order to get the latest data at that moment you will have to repeat this process (see step 10). ANY TASK YOU RUN TO DRUID CAN BE VERIFIED AS RUNNING AND WHETHER OR NOT IT WAS SUCCESSFUL IN THE OVERLORD INTERFACE AT PORT 8888 (navigate to 'tasks').
