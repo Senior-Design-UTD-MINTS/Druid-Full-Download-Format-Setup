@@ -28,7 +28,7 @@ To run this code:
   
   
   
-#**RESYNCHRONIZING DATA**
+# RESYNCHRONIZING DATA
 
 If for some reason the auto ingestion script missed a period of data that needs to be recovered, this can be done by utilizing the formatCSV.py script.
 
